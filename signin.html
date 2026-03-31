@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign In</title>
+  <!-- Corrected CSS file name (space removed) -->
+  <link rel="stylesheet" href="/HtmlTutorial/signin .css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="login-container">
+    <h2>Sign in</h2>
+    <form method="post" action="/HtmlTutorial/login.php">
+      <div class="input-box">
+        <i class="fas fa-user"></i>
+        <input type="text" name="email" placeholder="Email" required>
+      </div>
+      <div class="input-box">
+        <i class="fas fa-lock"></i>
+        <input type="password" name="password" placeholder="Password" required>
+      </div>
+      <button type="submit" class="login-btn">LOGIN</button>
+    </form>
+
+    <p>Or Sign in with social platform</p>
+    <div class="social-icons">
+      <i class="fab fa-facebook-f"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-google"></i>
+      <i class="fab fa-linkedin-in"></i>
+    </div>
+    <p>Don't have an account? <a href="/HtmlTutorial/signup.html">Sign up</a></p>
+  </div>
+</body>
+</html>

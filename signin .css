@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("/HtmlTutorial/image/madhu\ tutorial.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  background-image: url("/HtmlTutorial/image/madhu\ tutorial.jpg");
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px #532;
+  text-align: center;
+  width: 320px;
+}
+
+h2 {
+  color:#532;
+  margin-bottom: 25px;
+}
+
+.input-box {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  border: 2px solid #532;
+  border-radius: 25px;
+  padding: 10px;
+  background: #f5f6fa;
+}
+
+.input-box i {
+  color: #532;
+  margin-right: 10px;
+}
+
+.input-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-size: 16px;
+}
+
+.login-btn {
+  background: #532;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 20px 0;
+}
+
+.login-btn:hover {
+  background: #532;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.social-icons i {
+  background: #eee;
+  padding: 10px;
+  border-radius: 50%;
+  color: #333;
+  font-size: 16px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.social-icons i:hover {
+  background: #532;
+  color: white;
+}
+
+a {
+  color: #532;
+  text-decoration: none;
+}

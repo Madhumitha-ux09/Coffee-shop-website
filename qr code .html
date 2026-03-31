@@ -1,0 +1,20 @@
+html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Signup with QR</title>
+  <link rel="stylesheet" href="qrcode style .css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+
+  <h2>Scan this QR to enter Coffee Website</h2>
+  <div id="qrcode"></div>
+
+  <script>
+    const coffeeURL = "http://192.168.43.89:5500/Html%20Tutorial/index.html"; // or your full website URL
+    new QRCode(document.getElementById("qrcode"), coffeeURL);
+  </script>
+
+</body>
+</html>

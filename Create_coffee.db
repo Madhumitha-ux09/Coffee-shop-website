@@ -1,0 +1,90 @@
+from flask import Flask, render_template, request, redirect, url_for, session
+import sqlite3
+
+app = Flask(_name_)
+app.secret_key = 'your_secret_key'  # You can change this to a strong secret key
+
+# Function to connect to SQLite database
+def get_db_connection():
+    conn = sqlite3.connect('coffee_website.db')  # Database file name
+    conn.row_factory = sqlite3.Row
+    return conn
+
+# Home Page
+@app.route('/')
+def home():
+    return render_template('home.html')
+
+# About Page
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+# Product Page
+@app.route('/products')
+def products():
+    return render_template('product.html')
+
+# Contact Page
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+# Service Page
+@app.route('/service')
+def service():
+    return render_template('service.html')
+
+# Review Page
+@app.route('/reviews')
+def reviews():
+    return render_template('review.html')
+
+# Order Page
+@app.route('/order')
+def order():
+    return render_template('order.html')
+
+# Signup Page
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        
+        conn = get_db_connection()
+        conn.execute('INSERT INTO users (username, password) VALUES (?, ?)', (username, password))
+        conn.commit()
+        conn.close()
+        
+        return redirect(url_for('signin'))
+    
+    return render_template('signup.html')
+
+# Signin Page
+@app.route('/signin', methods=['GET', 'POST'])
+def signin():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        
+        conn = get_db_connection()
+        user = conn.execute('SELECT * FROM users WHERE username = ? AND password = ?', (username, password)).fetchone()
+        conn.close()
+        
+        if user:
+            session['user_id'] = user['id']
+            return redirect(url_for('home'))
+        else:
+            return 'Invalid credentials, try again.'
+    
+    return render_template('signin.html')
+
+# Logout
+@app.route('/logout')
+def logout():
+    session.pop('user_id', None)
+    return redirect(url_for('signin'))
+
+if _name_ == '_main_':
+    app.run(debug=True)
